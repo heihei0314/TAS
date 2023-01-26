@@ -1,0 +1,2 @@
+name: PHP tester
+  uses: MilesChou/docker-php-tester@v1
