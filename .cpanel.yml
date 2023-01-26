@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/waits3ql/public_html/tas
-    - /bin/cp -R files $DEPLOYPATH
+    - /bin/cp -R $DEPLOYPATH
