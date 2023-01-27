@@ -1,0 +1,14 @@
+name: Unit Test and Integration Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+    check-bats-version:
+      runs-on: ubuntu-latest
+      steps:
+       - name: Run test suite
+         run: composer run-script test
