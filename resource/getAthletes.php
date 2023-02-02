@@ -8,6 +8,7 @@
     foreach ($API as $value){
         array_push($athletes,$value['name']);
     }
+    $athletes = array_unique($athletes);
     // Create Array and convert to JSON
     $json = json_encode($athletes);
     

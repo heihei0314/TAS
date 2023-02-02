@@ -1,34 +1,27 @@
 <?php
     
     //stub athletes' mean data for test cases
-    $athlete1 = "Dabin LEE";
-    $athlete2 = "Tae-Joon PARK";
-    $athletes=array();
-    array_push($athletes,$athlete1);
-    array_push($athletes,$athlete2);
-    
-    
-    $meanData1 = Array("name"=>"Dabin LEE","court"=>"P0","color"=>"R","winlose"=>"Win","WinningRound"=>"2","Score"=>"32","Punch"=>"0","Body"=>"6","SpinBody"=>"5","SpinHead"=>"0","Head"=>"0","Warning"=>"0");
-    $meanData2 = Array("name"=>"Tae-Joon PARK","court"=>"P0","color"=>"B","winlose"=>"lose","WinningRound"=>"1","Score"=>"15","Punch"=>"0","Body"=>"0","SpinBody"=>"0","SpinHead"=>"3","Head"=>"0","Warning"=>"0");
+    $meanData1 = Array("name"=>"Dabin LEE","win"=>1,"lose"=>"0","WinningRound"=>"2","Score"=>"32","Punch"=>"0","Body"=>"6","SpinBody"=>"5","SpinHead"=>"0","Head"=>"0","Warning"=>"0");
+    $meanData2 = Array("name"=>"Tae-Joon PARK","win"=>0,"lose"=>"1","WinningRound"=>"2","Score"=>"15","Punch"=>"0","Body"=>"0","SpinBody"=>"0","SpinHead"=>"3","Head"=>"0","Warning"=>"0");
     $meanData=array();
     array_push($meanData,$meanData1);
     array_push($meanData,$meanData2);
     
     //activiate test
     $winRateTestResult = array();
-    winRateTest($athletes, $meanData);
+    winRateTest($meanData1, $meanData2);
     
     //print test report
     summary();
     
-    function winRateTest($athletes, $meanData){
+    function winRateTest($meanData1,$meanData2){
         //print_r($allAthletes);
         //print_r($data);
         
         global $winRateTestResult;
         include "../winRate.php";
         $winRateAnalyser = new winRateCalculator();
-        $winRateTestResult = $winRateAnalyser->getWinRate($athletes[0], $athletes[1]);
+        $winRateTestResult = $winRateAnalyser->getWinRate($meanData1, $meanData2);
     }
     
     function consoleLog($text){
@@ -38,7 +31,7 @@
     function summary() {
         global $winRateTestResult;
         print_r($winRateTestResult);
-        $expectedWinRate = Array(0,32,15);
+        $expectedWinRate = Array("46.43%","53.57%");
         $t=1;
         $s=0;
         $f=0;

@@ -3,7 +3,10 @@
     $dataCollection = new dataCollection();
     $gameAPI = $dataCollection->connectAPI('games');
     $athletesAPI = $dataCollection->connectAPI('athletes');
-    $mappedData = $dataCollection->transformData($gameAPI, $athletesAPI);
+    
+    include '../component/data-analyser/dataTransform.php';
+    $dataAnalyser = new dataTransform();
+    $mappedData = $dataAnalyser->transformData($gameAPI, $athletesAPI);
     //print_r($mappedData);
     
     // Create Array and convert to JSON

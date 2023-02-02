@@ -2,7 +2,7 @@
         
 class Profile {
     
-    function getMean($athlete, $data){
+    function calculateMean($athlete, $data){
         $n=0;
         $win=0;
         $lose=0;
@@ -47,6 +47,9 @@ class Profile {
         $profile = array("name"=>$athlete,"win"=>$win,"lose"=>$lose,"WinningRound"=>$m_WinningRound,"Score"=>$m_Score,"Punch"=>$m_Punch,"Body"=>$m_Body,"SpinBody"=>$m_SpinBody,"SpinHead"=>$m_SpinHead,"Head"=>$m_Head,"Warning"=>$m_Warning);
         //print_r($profile);
         return $profile;
+    }
+    function updateMean(){
+        
     }
 }
 

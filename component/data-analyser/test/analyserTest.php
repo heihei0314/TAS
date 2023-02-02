@@ -23,7 +23,7 @@
         include "../analyser.php";
         $analyser = new Profile();
         foreach($allAthletes as $athlete){
-            $profile = $analyser->getMean($athlete, $data);
+            $profile = $analyser->calculateMean($athlete, $data);
             array_push($testScore,$profile['Score']);
         }   
     }
@@ -34,8 +34,16 @@
     
     function summary() {
         global $testScore;
+        echo "test result: ";
         print_r($testScore);
+        echo "<br>";
+        echo "<br>";
         $expectedScore = Array(0,32,15);
+        echo "expected result: ";
+        print_r($expectedScore);
+        echo "<br>";
+        echo "<br>";
+        
         $t=0;
         $s=0;
         $f=0;
@@ -49,6 +57,7 @@
             $t++;
         }
         $summary = "test cases: ".$t.", success: ".$s.", fail: ".$f;
+        print_r($summary);
         consoleLog($summary);
     }
 ?>
