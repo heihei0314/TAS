@@ -57,9 +57,5 @@
             }
             return $data;
         }
-    
-        function postData(){
-        
-        }
     }
 ?>

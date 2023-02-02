@@ -19,10 +19,14 @@ Class Controller{
         
     }
     
-    function postMean(){
+    function putGameData(){
         
     }
-    
+  
+    function putMean(){
+        
+    }
+
     function getMean($athlete){
         $meanURL = "https://tas.waitsuentkd.com/resource/getMean.php";
         $athleteData = array('athlete' => $athlete);

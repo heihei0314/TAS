@@ -49,7 +49,7 @@ class Profile {
         return $profile;
     }
     function updateMean(){
-        
+        //putMean();
     }
 }
 
