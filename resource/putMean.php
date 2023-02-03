@@ -4,7 +4,7 @@
 		$RB = $_GET['RB'];
 		$scoreType = $_GET['scoreType'];
 		// Establishing Connection with Database
-		require_once 'db_configs.php';
+		require_once '../conf/db_configs.php';
 		$conn = new mysqli(host, username, password, dbname);
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
