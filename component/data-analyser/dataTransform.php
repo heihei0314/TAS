@@ -3,14 +3,18 @@
     Class dataTransform{
         //transform data
         function transformData($game, $allAthletes,$athlete){
+            include '../data-collection/dataCollection.php';
+            $dataCollection = new dataCollection();
+            $gameAPI = $dataCollection->connectAPI('games');
+            $athletesAPI = $dataCollection->connectAPI('athletes');
             $data=array();
-            foreach ($allAthletes as $a){
+            foreach ($athletesAPI as $a){
                 if(is_null($a)){ $temp = array();}
                 else if($a['name']==$athlete){
                     $name = $a['name'];
                     $court = $a['court'];
                     $color = $a['Color'];
-                    foreach ($game as $g){
+                    foreach ($gameAPI as $g){
                     if ($court==$g['court']){
                         //get winlose
                         if (is_null($color)){
@@ -55,10 +59,10 @@
                     //print_r($temp);
                 }
             }
-            return $data;
-        }
-        function updateGameData(){
+            
             //putMean();
+            
+            return $data;
         }
     }
 ?>
