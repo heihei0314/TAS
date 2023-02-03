@@ -6,28 +6,21 @@
             //connect to resource
             $url = "https://www.waitsuentkd.com/sparring/API/resource.php";
     
-            $ch = curl_init($url);
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data_key);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-              'Content-Type: application/json')
-            );
-            
-            // get json
-            $result = curl_exec($ch);
-            // echo $result;
-            curl_close($ch);    
             //connect to resource
-            
-            //convert to array
-            $api = json_decode($result, true);
-            $response = $api[$data_key];
-            //echo count($api);
+            $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded"
+                )
+            );
         
+            $context  = stream_context_create($options);
+            $result = file_get_contents($url, false, $context);
+            //connect to resource
+        
+            $response = json_decode($result, true);
+            //echo count($data);
+            // get json and convert to array
             return $response;
         }
-
     }
 ?>
