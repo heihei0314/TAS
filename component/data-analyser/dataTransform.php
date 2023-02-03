@@ -3,10 +3,13 @@
     Class dataTransform{
         //transform data
         function transformData($game, $allAthletes,$athlete){
+            //call data collection
             include '../data-collection/dataCollection.php';
             $dataCollection = new dataCollection();
             $gameAPI = $dataCollection->connectAPI('games');
             $athletesAPI = $dataCollection->connectAPI('athletes');
+            
+            //proceed data transform
             $data=array();
             foreach ($athletesAPI as $a){
                 if(is_null($a)){ $temp = array();}
