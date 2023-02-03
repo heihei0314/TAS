@@ -2,11 +2,11 @@
     
     Class dataTransform{
         //transform data
-        function transformData($game, $athletes){
+        function transformData($game, $allAthletes,$athlete){
             $data=array();
-            foreach ($athletes as $a){
+            foreach ($allAthletes as $a){
                 if(is_null($a)){ $temp = array();}
-                else{
+                else if($a['name']==$athlete){
                     $name = $a['name'];
                     $court = $a['court'];
                     $color = $a['Color'];
