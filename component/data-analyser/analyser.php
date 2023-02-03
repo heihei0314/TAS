@@ -6,7 +6,8 @@ class Profile {
         include '../../resource/controller.php';
         $controller = new Controller();
         $data = $controller->getGameData($athlete);
-        return calculator($data);
+            print_r($data);
+        //return calculator($data);
     }
 
     function calculator($data){
