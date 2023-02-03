@@ -3,7 +3,7 @@
 class Profile {
     
     function calculateMean($athlete){
-        include "../../resource/controller.php";
+        include '../../resource/controller.php';
         $controller = new Controller();
         $data = $controller->getGameData($athlete);
         return calculator($data);
