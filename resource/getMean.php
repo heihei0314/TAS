@@ -7,12 +7,12 @@
     //change to Message Queue
     include 'controller.php';
     $controller = new Controller();
-    $gameData = $controller->getGameData();
+    $gameData = $controller->getGameData($athlete);
    // print_r($gameData);
     
     include "../component/data-analyser/analyser.php";
     $analyser = new Profile();
-    $profile = $analyser->calculateMean($athlete, $gameData);
+    $profile = $analyser->calculateMean($athlete);
     //change to Message Queue
     
     // Create Array and convert to JSON
