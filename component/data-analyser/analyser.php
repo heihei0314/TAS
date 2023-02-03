@@ -7,11 +7,7 @@ class Profile {
         require_once __DIR__.'/../../resource/controller.php';
         $controller = new Controller();
         $data = $controller->getGameData($athlete);
-        $meanData = this->calculator($data);
-        return $meanData;
-    }
 
-    function calculator($data){
         $n=0;
         $win=0;
         $lose=0;
@@ -57,10 +53,10 @@ class Profile {
         $m_Warning = $m_Warning/$n;
         $profile = array("name"=>$name,"win"=>$win,"lose"=>$lose,"WinningRound"=>$m_WinningRound,"Score"=>$m_Score,"Punch"=>$m_Punch,"Body"=>$m_Body,"SpinBody"=>$m_SpinBody,"SpinHead"=>$m_SpinHead,"Head"=>$m_Head,"Warning"=>$m_Warning);
         //print_r($profile);
-        return $profile;
-    }
-    function updateMean(){
+        
         //putMean();
+            
+        return $profile;
     }
 }
 
