@@ -6,10 +6,10 @@ class Profile {
         include "../../resource/controller.php";
         $controller = new Controller();
         $data = $controller->getGameData($athlete);
-        return calculater($athlete, $data);
+        return calculator($data);
     }
 
-    function calculater($data){
+    function calculator($data){
         $n=0;
         $win=0;
         $lose=0;
