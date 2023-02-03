@@ -15,11 +15,12 @@
         
             $context  = stream_context_create($options);
             $result = file_get_contents($url, false, $context);
-            //connect to resource
+            
         
-            $response = json_decode($result, true);
-            //echo count($data);
-            // get json and convert to array
+            // convert to array
+            $api = json_decode($result, true);
+            $response = $api[$data_key];
+            
             return $response;
         }
     }
