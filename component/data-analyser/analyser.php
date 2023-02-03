@@ -7,7 +7,8 @@ class Profile {
         require_once __DIR__.'/../../resource/controller.php';
         $controller = new Controller();
         $data = $controller->getGameData($athlete);
-        return calculator($data);
+        $meanData = this->calculator($data);
+        return $meanData;
     }
 
     function calculator($data){
