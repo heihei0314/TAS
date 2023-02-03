@@ -19,7 +19,7 @@ jobs:
           heroku_email: "tsye7393@colorado.edu"
 
       - name: Push to Hostgator
-         run: |
+         run: 
              git remote set-url --add --push origin ssh://waits3ql@waitsuentkd.com/home2/waits3ql/repositories/TAS
              git add
              git commit 
