@@ -57,5 +57,8 @@
             }
             return $data;
         }
+        function updateGameData(){
+            //putMean();
+        }
     }
 ?>

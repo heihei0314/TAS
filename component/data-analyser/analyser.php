@@ -2,7 +2,14 @@
         
 class Profile {
     
-    function calculateMean($athlete, $data){
+    function calculateMean($athlete){
+        include "../../resource/controller.php";
+        $controller = new Controller();
+        $data = $controller->getGameData($athlete);
+        return calculater($athlete, $data);
+    }
+
+    function calculater($data){
         $n=0;
         $win=0;
         $lose=0;
@@ -14,14 +21,19 @@ class Profile {
         $m_SpinHead = 0;
         $m_Head = 0;
         $m_Warning = 0;
-        foreach ($data as $value){
-            if($athlete==$value['name']){
+        if(is_null($data)){
+            $n=1;
+        }
+        else {
+            foreach ($data as $value){
+                $name=$value['name'];
                 if($value['winlose']=='Win'){
                     $win++;
                 }
                 else {
                     $lose++;
                 }
+                
                 $m_WinningRound += $value['WinningRound'];
                 $m_Score += $value['Score'];
                 $m_Punch += $value['Punch'];
@@ -33,9 +45,6 @@ class Profile {
                 $n++;
             }
         }
-        if($n==0){
-            $n=1;
-        }
         $m_WinningRound = $m_WinningRound/$n;
         $m_Score = $m_Score/$n;
         $m_Punch = $m_Punch/$n;
@@ -44,7 +53,7 @@ class Profile {
         $m_SpinHead = $m_SpinHead/$n;
         $m_Head = $m_Head/$n;
         $m_Warning = $m_Warning/$n;
-        $profile = array("name"=>$athlete,"win"=>$win,"lose"=>$lose,"WinningRound"=>$m_WinningRound,"Score"=>$m_Score,"Punch"=>$m_Punch,"Body"=>$m_Body,"SpinBody"=>$m_SpinBody,"SpinHead"=>$m_SpinHead,"Head"=>$m_Head,"Warning"=>$m_Warning);
+        $profile = array("name"=>$name,"win"=>$win,"lose"=>$lose,"WinningRound"=>$m_WinningRound,"Score"=>$m_Score,"Punch"=>$m_Punch,"Body"=>$m_Body,"SpinBody"=>$m_SpinBody,"SpinHead"=>$m_SpinHead,"Head"=>$m_Head,"Warning"=>$m_Warning);
         //print_r($profile);
         return $profile;
     }

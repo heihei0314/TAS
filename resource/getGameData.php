@@ -1,4 +1,10 @@
 <?php
+    $athlete = "";
+    if(isset($_POST['athlete'])){
+        $athlete = $_POST['athlete'];
+    }
+    
+    //change to DB
     include '../component/data-collection/dataCollection.php';
     $dataCollection = new dataCollection();
     $gameAPI = $dataCollection->connectAPI('games');
@@ -8,7 +14,8 @@
     $dataAnalyser = new dataTransform();
     $mappedData = $dataAnalyser->transformData($gameAPI, $athletesAPI);
     //print_r($mappedData);
-    
+    //change to DB
+
     // Create Array and convert to JSON
     $json = json_encode($mappedData);
     
