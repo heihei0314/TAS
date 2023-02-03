@@ -4,7 +4,7 @@ class Profile {
     
     function calculateMean($athlete){
         
-        include __DIR__.'/../../resource/controller.php';
+        require_once __DIR__.'/../../resource/controller.php';
         $controller = new Controller();
         $data = $controller->getGameData($athlete);
         //return calculator($data);
