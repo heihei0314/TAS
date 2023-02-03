@@ -1,5 +1,5 @@
 <?php
-    include 'resource/controller.php';
+    require_once 'resource/controller.php';
     $controller = new Controller();
     //get all athletes' name for option select
     $allAthletes = $controller->getAthletes();
