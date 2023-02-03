@@ -12,7 +12,7 @@
     
     include '../component/data-analyser/dataTransform.php';
     $dataAnalyser = new dataTransform();
-    $mappedData = $dataAnalyser->transformData($gameAPI, $athletesAPI);
+    $mappedData = $dataAnalyser->transformData($gameAPI, $athletesAPI, $athlete);
     //print_r($mappedData);
     //change to DB
 
