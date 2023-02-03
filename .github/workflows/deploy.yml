@@ -17,10 +17,3 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "tas" 
           heroku_email: "tsye7393@colorado.edu"
-
-      - name: Push to Hostgator
-         run: 
-             git remote set-url --add --push origin ssh://waits3ql@waitsuentkd.com/home2/waits3ql/repositories/TAS
-             git add
-             git commit 
-             git push tas main
