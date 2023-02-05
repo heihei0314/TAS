@@ -9,6 +9,7 @@ class Profile {
         $data = $controller->getGameData($athlete);
 
         $n=0;
+        $name = "";
         $win=0;
         $lose=0;
         $m_WinningRound = 0;
