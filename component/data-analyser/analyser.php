@@ -19,11 +19,7 @@ class Profile {
         $m_SpinHead = 0;
         $m_Head = 0;
         $m_Warning = 0;
-        if(is_null($data)){
-            $n=1;
-        }
-        else {
-            foreach ($data as $value){
+        foreach ($data as $value){
                 $name=$value['name'];
                 if($value['winlose']=='Win'){
                     $win++;
@@ -41,16 +37,18 @@ class Profile {
                 $m_Head += $value['Head'];
                 $m_Warning += $value['Warning'];
                 $n++;
-            }
         }
-        $m_WinningRound = $m_WinningRound/$n;
-        $m_Score = $m_Score/$n;
-        $m_Punch = $m_Punch/$n;
-        $m_Body = $m_Body/$n;
-        $m_SpinBody = $m_SpinBody/$n;
-        $m_SpinHead = $m_SpinHead/$n;
-        $m_Head = $m_Head/$n;
-        $m_Warning = $m_Warning/$n;
+            
+        if($n!=0){
+                $m_WinningRound = $m_WinningRound/$n;
+                $m_Score = $m_Score/$n;
+                $m_Punch = $m_Punch/$n;
+                $m_Body = $m_Body/$n;
+                $m_SpinBody = $m_SpinBody/$n;
+                $m_SpinHead = $m_SpinHead/$n;
+                $m_Head = $m_Head/$n;
+                $m_Warning = $m_Warning/$n;
+        }
         $profile = array("name"=>$name,"win"=>$win,"lose"=>$lose,"WinningRound"=>$m_WinningRound,"Score"=>$m_Score,"Punch"=>$m_Punch,"Body"=>$m_Body,"SpinBody"=>$m_SpinBody,"SpinHead"=>$m_SpinHead,"Head"=>$m_Head,"Warning"=>$m_Warning);
         //print_r($profile);
         
