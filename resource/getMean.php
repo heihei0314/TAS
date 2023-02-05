@@ -12,7 +12,7 @@
     
     include "../component/data-analyser/analyser.php";
     $analyser = new Profile();
-    //$profile = $analyser->calculateMean($athlete);
+    $profile = $analyser->calculateMean($athlete);
     //change to DB
     
     // Create Array and convert to JSON
