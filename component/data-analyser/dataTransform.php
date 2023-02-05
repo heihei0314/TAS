@@ -4,7 +4,7 @@
         //transform data
         function transformData($game, $allAthletes,$athlete){
             //call data collection
-            include '../data-collection/dataCollection.php';
+            require_once __DIR__.'/../data-collection/dataCollection,php';
             $dataCollection = new dataCollection();
             $gameAPI = $dataCollection->connectAPI('games');
             $athletesAPI = $dataCollection->connectAPI('athletes');
