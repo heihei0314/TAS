@@ -8,6 +8,10 @@ Class Controller{
         return $allAthletes;
     }
     
+    function postAthlete(){
+        
+    }
+    
     function getGameData($athlete){
         $gameURL = "https://tas.waitsuentkd.com/resource/getGameData.php";
         $athleteData = array('athlete' => $athlete);
