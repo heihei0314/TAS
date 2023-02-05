@@ -39,6 +39,8 @@
 			if ($conn->query($sql) === TRUE) {
 				echo $sql;
 			} else {
+				echo "Failed";
+			}
 		}
 		
 		$conn->close();
