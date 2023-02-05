@@ -4,7 +4,7 @@
         $athlete = $_POST['athlete'];
     }
     
-    //change to Message Queue
+    //change to DB
     include 'controller.php';
     $controller = new Controller();
     $gameData = $controller->getGameData($athlete);
@@ -12,8 +12,8 @@
     
     include "../component/data-analyser/analyser.php";
     $analyser = new Profile();
-    $profile = $analyser->calculateMean($athlete);
-    //change to Message Queue
+    //$profile = $analyser->calculateMean($athlete);
+    //change to DB
     
     // Create Array and convert to JSON
     $json = json_encode($profile);
