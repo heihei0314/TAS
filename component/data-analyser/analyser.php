@@ -39,7 +39,7 @@ class Profile {
                 $n++;
         }
             
-        if($n!=0){
+        try {
                 $m_WinningRound = $m_WinningRound/$n;
                 $m_Score = $m_Score/$n;
                 $m_Punch = $m_Punch/$n;
@@ -49,6 +49,7 @@ class Profile {
                 $m_Head = $m_Head/$n;
                 $m_Warning = $m_Warning/$n;
         }
+        catch( Exception $e ){}
         $profile = array("name"=>$name,"win"=>$win,"lose"=>$lose,"WinningRound"=>$m_WinningRound,"Score"=>$m_Score,"Punch"=>$m_Punch,"Body"=>$m_Body,"SpinBody"=>$m_SpinBody,"SpinHead"=>$m_SpinHead,"Head"=>$m_Head,"Warning"=>$m_Warning);
         //print_r($profile);
         
