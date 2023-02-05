@@ -23,8 +23,9 @@ Class Controller{
         
     }
   
-    function putMean(){
-        
+    function putMean($profile){
+        $putMeanURL = "https://tas.waitsuentkd.com/resource/putMean.php";
+        $this->get($putMeanURL, $profile);        
     }
 
     function getMean($athlete){
