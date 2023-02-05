@@ -31,7 +31,7 @@
 			die("Connection failed: " . $conn->connect_error);
 		} 
 		// Establishing Connection with Database
-		$sql = "INSERT INTO profile (name, win, lose, WinningRound, Score, Punch, Body, SpinBody, SpinHead, Head, Warning) VALUES ('$name', '$win', '$lose', '$WinningRound', '$Score', '$Punch', '$Body', '$SpinBody', '$SpinHead', '$Head', '$Warning') ON DUPLICATE KEY UPDATE name = '$name'";
+		$sql = "REPLACE INTO profile (name, win, lose, WinningRound, Score, Punch, Body, SpinBody, SpinHead, Head, Warning) VALUES ('$name', '$win', '$lose', '$WinningRound', '$Score', '$Punch', '$Body', '$SpinBody', '$SpinHead', '$Head', '$Warning')";
 			
 		if ($conn->query($sql) === TRUE) {
 			echo $sql;
