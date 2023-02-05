@@ -19,8 +19,9 @@ Class Controller{
         
     }
     
-    function putGameData(){
-        
+    function putGameData($gameData){
+        $putMeanURL = "https://tas.waitsuentkd.com/resource/putGameData.php";
+        $this->get($putMeanURL, $gameData);          
     }
   
     function putMean($profile){
@@ -35,7 +36,12 @@ Class Controller{
         return $meanData;
     }
     
-    function getwinRate($meanData1,$meanData2){
+    function putWinRate($WinRate){
+        $putWinRateURL = "https://tas.waitsuentkd.com/resource/putWinRate.php";
+        $this->get($putWinRateURL, $WinRate);        
+    }
+    
+    function getWinRate($meanData1,$meanData2){
         $winRateURL = "https://tas.waitsuentkd.com/resource/getWinRate.php";
         $meanDataArray = array('meanData1' => $meanData1, 'meanData2' => $meanData2);
         $winRateData = $this->get($winRateURL, $meanDataArray);
