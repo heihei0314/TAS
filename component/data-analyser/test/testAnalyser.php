@@ -1,4 +1,4 @@
- <? php
+ <?php
    $athlete = "";
     if(isset($_GET['athlete'])){
         $athlete = $_GET['athlete'];
