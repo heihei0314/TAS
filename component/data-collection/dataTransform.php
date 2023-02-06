@@ -2,7 +2,7 @@
     $athlete = 'Lam Ching Ho';
     $dataTransform = new dataTransform();
     $dataTransform->transformData($athlete);
-    print_r($athlete);
+    
     Class dataTransform{
         //transform data
         function transformData($athlete){
@@ -66,7 +66,7 @@
                     //print_r($data);
                 }
             }
-
+            print_r($data);
             //Store in database
             require_once __DIR__.'/../../resource/controller.php';
             $controller = new Controller();
