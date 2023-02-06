@@ -22,12 +22,10 @@
     
     // test data transformation
     function transformDataTest($athlete){        
+        //transform and insert data
         include '../dataTransform.php';
         $dataTransform = new dataTransform();
-        foreach ($athletesTest as $athlete){
-            //transform and insert data
-            $dataTransform->transformData($athlete);
-        }        
+        $dataTransform->transformData($athlete);      
         
         //get data from db for validate
         require_once __DIR__.'/../../../resource/controller.php';
