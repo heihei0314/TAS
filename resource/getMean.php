@@ -29,11 +29,11 @@
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            print_r($row);
+            //print_r($row);
         }
     }
     // Create Array and convert to JSON
-    $json = json_encode($result);
+    $json = json_encode($row);
     
     // Set header to JSON format
     header('Content-Type: application/json; charset=utf-8');
