@@ -70,7 +70,6 @@
                     require_once __DIR__.'/../../resource/controller.php';
                     $controller = new Controller();
                     $controller->putGameData($data);
-                    array_push($data,$temp);
                     //print_r($data);
                 }
             }             
