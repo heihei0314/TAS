@@ -62,8 +62,11 @@
                     //print_r($temp);
                 }
             }
-            
-            //putMean();
+
+            //Store in database
+            require_once __DIR__.'/../../resource/controller.php';
+            $controller = new Controller();
+            $data = $controller->putGameData($data);
             
             return $data;
         }
