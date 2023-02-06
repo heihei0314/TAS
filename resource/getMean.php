@@ -5,7 +5,7 @@
     }
     
     require_once '../conf/db_configs.php';
-	$conn = new mysqli(host, username, password, dbname);// Check connection
+    $conn = new mysqli(host, username, password, dbname);// Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
@@ -14,10 +14,11 @@
     $result = $conn->query($sql);
     
     $conn->close();
+    $profile = array();
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            $profile = $row;
+		$profile= $row;
         }
     }
     // Create Array and convert to JSON
