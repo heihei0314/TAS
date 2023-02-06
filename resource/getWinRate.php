@@ -15,11 +15,11 @@
    // $meanData1 = $controller->getMean($athlete1);
    // $meanData2 = $controller->getMean($athlete2);
     //print_r($meanData1);
-    
+    // change to db;
     include "../component/data-analyser/winRate.php";
     $calculator = new winRateCalculator();
     $winRate = $calculator->getWinRate($meanData1,$meanData2);
-    // change to db;
+    
 
     // Create Array and convert to JSON
     $json = json_encode($winRate);
