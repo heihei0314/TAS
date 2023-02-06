@@ -42,7 +42,7 @@
         global $dataTransform;
         $t++;
         
-        $mappedData = $dataTransform->transformData($gameTest, $athletesTest);
+        $mappedData = $dataTransform->transformData($athletesTest);
         $testWinlose=array();
         foreach ($mappedData as $value){
             array_push($testWinlose,$value['winlose']);

@@ -59,7 +59,7 @@
                     }
                     $temp = array("name"=>$name,"court"=>$court,"color"=>$color,"winlose"=>$winlose,"WinningRound"=>$WinningRound,"Score"=>$Score,"Punch"=>$Punch,"Body"=>$Body,"SpinBody"=>$SpinBody,"SpinHead"=>$SpinHead,"Head"=>$Head,"Warning"=>$Warning);
                     array_push($data,$temp);
-                    //print_r($temp);
+                    print_r($temp);
                 }
             }
 
