@@ -52,7 +52,7 @@
         global $f;
         global $testWinlose;
         $i=0;
-        $expectedWinlose = Array(array(""),array("Win"),array("Lose","Lose","Win"));  
+        $expectedWinlose = Array(array(),array("Win"),array("Lose","Lose","Win"));  
         foreach ($testWinlose as $result){
             print_r($expectedWinlose[$i]);
             if($result==$expectedWinlose[$i]){
