@@ -14,7 +14,7 @@
     $result = $conn->query($sql);
     
     $conn->close();
-    $profile = array();
+    $profile = array('name' => $athlete,'win' => 0,'lose' => 0,	'WinningRound' =>0,'Score' =>0,'Punch' =>0,'Body' =>0,'SpinBody' =>0,'SpinHead' =>0,'Head' =>0,'Warning' =>0);
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
