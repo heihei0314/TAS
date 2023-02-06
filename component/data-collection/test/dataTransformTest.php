@@ -32,11 +32,9 @@
         $controller = new Controller();
         $gameData = array();
         $test = array();
-        foreach ($athletesTest as $athlete){
-            $gameData = $controller->getGameData($athlete);
-            foreach ($gameData as $data){
-                array_push($test,$data['winlose']);
-            }
+        $gameData = $controller->getGameData($athlete);
+        foreach ($gameData as $data){
+            array_push($test,$data['winlose']);
         }  
         print_r($test);
         return $test;
