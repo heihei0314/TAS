@@ -34,6 +34,7 @@
         global $dataTransform;
         $t++;
         
+        $mappedData = array();
         $testWinlose=array();
         foreach ($athletesTest as $athlete){
             $profile = $dataTransform->transformData($athlete);
