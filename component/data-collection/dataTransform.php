@@ -17,7 +17,6 @@
             //proceed data transform
             $data=array();
             foreach ($athletesAPI as $a){
-                $temp = array();
                 if($a['name']==$athlete){
                     $name = $a['name'];
                     $court = $a['court'];
@@ -61,16 +60,15 @@
                         
                     }
                     }
-                    $temp = array("name"=>$name,"court"=>$court,"color"=>$color,"winlose"=>$winlose,"WinningRound"=>$WinningRound,"Score"=>$Score,"Punch"=>$Punch,"Body"=>$Body,"SpinBody"=>$SpinBody,"SpinHead"=>$SpinHead,"Head"=>$Head,"Warning"=>$Warning);
+                    $data = array("name"=>$name,"court"=>$court,"color"=>$color,"winlose"=>$winlose,"WinningRound"=>$WinningRound,"Score"=>$Score,"Punch"=>$Punch,"Body"=>$Body,"SpinBody"=>$SpinBody,"SpinHead"=>$SpinHead,"Head"=>$Head,"Warning"=>$Warning);
+                    require_once __DIR__.'/../../resource/controller.php';
+                    $controller = new Controller();
+                    $controller->putGameData($data);
                     array_push($data,$temp);
                     //print_r($data);
                 }
-            }
-            print_r($data);
             //Store in database
-            require_once __DIR__.'/../../resource/controller.php';
-            $controller = new Controller();
-            $controller->putGameData($data);
+            
             
             return $data;
         }
