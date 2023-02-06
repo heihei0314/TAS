@@ -10,6 +10,10 @@
     Class dataTransform{
         //transform data
         function transformData($athlete){
+            //ready for data insert
+            require_once __DIR__.'/../../resource/controller.php';
+            $controller = new Controller();
+            
             //call data collection
             require_once __DIR__.'/dataCollection.php';
             $dataCollection = new dataCollection();
@@ -61,16 +65,13 @@
                                 $Warning = $g['BWarning'];
                                 break;
                         }
-                        
-                    }
-                    }
-                    $data = array("name"=>$name,"court"=>$court,"color"=>$color,"winlose"=>$winlose,"WinningRound"=>$WinningRound,"Score"=>$Score,"Punch"=>$Punch,"Body"=>$Body,"SpinBody"=>$SpinBody,"SpinHead"=>$SpinHead,"Head"=>$Head,"Warning"=>$Warning);
+                        $data = array("name"=>$name,"court"=>$court,"color"=>$color,"winlose"=>$winlose,"WinningRound"=>$WinningRound,"Score"=>$Score,"Punch"=>$Punch,"Body"=>$Body,"SpinBody"=>$SpinBody,"SpinHead"=>$SpinHead,"Head"=>$Head,"Warning"=>$Warning);
                     
-                    //Store in database
-                    require_once __DIR__.'/../../resource/controller.php';
-                    $controller = new Controller();
-                    $controller->putGameData($data);
+                        //Store in database
+                        $controller->putGameData($data);
                     //print_r($data);
+                    }
+                    }               
                 }
             }             
         }
