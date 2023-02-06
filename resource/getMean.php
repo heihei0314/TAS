@@ -1,21 +1,9 @@
 <?php
-    $athlete = "Lam Ching Ho";
+    $athlete = "";
     if(isset($_POST['athlete'])){
         $athlete = $_POST['athlete'];
     }
     
-    /*/change to DB
-    include 'controller.php';
-    $controller = new Controller();
-    $gameData = $controller->getGameData($athlete);
-   // print_r($gameData);
-    
-    include "../component/data-analyser/analyser.php";
-    $analyser = new Profile();
-    $profile = $analyser->calculateMean($athlete);
-    //change to DB*/
-    
-    // Create connection
     require_once '../conf/db_configs.php';
 	$conn = new mysqli(host, username, password, dbname);// Check connection
     if ($conn->connect_error) {
@@ -26,11 +14,9 @@
     $result = $conn->query($sql);
     
     $conn->close();
-    $dataArray = array();
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            array_push($dataArray,$row);
             $profile = $row;
         }
     }

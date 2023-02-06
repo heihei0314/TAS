@@ -2,7 +2,7 @@
     
     Class dataTransform{
         //transform data
-        function transformData($game, $allAthletes,$athlete){
+        function transformData($athlete){
             //call data collection
             require_once __DIR__.'/../data-collection/dataCollection.php';
             $dataCollection = new dataCollection();

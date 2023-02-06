@@ -4,17 +4,22 @@
         $athlete = $_POST['athlete'];
     }
     
-    //change to DB
-    include '../component/data-collection/dataCollection.php';
-    $dataCollection = new dataCollection();
-    $gameAPI = $dataCollection->connectAPI('games');
-    $athletesAPI = $dataCollection->connectAPI('athletes');
+    require_once '../conf/db_configs.php';
+	$conn = new mysqli(host, username, password, dbname);// Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT * FROM gameData WHERE name='$athlete'";
+    $result = $conn->query($sql);
     
-    include '../component/data-analyser/dataTransform.php';
-    $dataAnalyser = new dataTransform();
-    $mappedData = $dataAnalyser->transformData($gameAPI, $athletesAPI, $athlete);
-    //print_r($mappedData);
-    //change to DB
+    $conn->close();
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            $mappedData = $row;
+        }
+    }
 
     // Create Array and convert to JSON
     $json = json_encode($mappedData);
