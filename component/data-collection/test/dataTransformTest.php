@@ -39,8 +39,9 @@
         $testData = array();
         foreach ($athletesTest as $athlete){
             $testData = $controller->getGameData($athlete);
-            print_r($testData);
-            array_push($testWinlose,$testData['winlose']);
+            foreach ($testData as $data){
+                array_push($testWinlose,$data['winlose']);
+            }
         }  
         print_r($testWinlose);
         
