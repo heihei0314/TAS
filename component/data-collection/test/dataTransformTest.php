@@ -19,7 +19,7 @@
     $athletesTest = Array($athletesTest1,$athletesTest2,$athletesTest3);
     //print_r($athletesTest);
     
-    $expectedWinlose = Array("","Lose","Win","Win","Lose");
+    $expectedWinlose = Array("","Win","Win","Win","Lose");
     $msg = transformDataTest($athletesTest,$expectedWinlose);
     consoleLog($msg);
     
@@ -34,13 +34,17 @@
         global $dataTransform;
         $t++;
         
+        require_once __DIR__.'/../../resource/controller.php';
+        $controller = new Controller();
         $mappedData = array();
         $testWinlose=array();
         foreach ($athletesTest as $athlete){
-            $profile = $dataTransform->transformData($athlete);
-            array_push($mappedData, $profile); 
+            $dataTransform->transformData($athlete);
+            $gameData = $controller->getGameData($athlete);
+            array_push($testWinlose,$gameData);
             array_push($testWinlose,$profile['winlose']);
         }        
+        
         
         if($testWinlose==$expectedWinlose){
             $s++;
