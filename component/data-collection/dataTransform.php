@@ -1,8 +1,5 @@
 <?php
-    $athlete = 'Lam Ching Ho';
-    $dataTransform = new dataTransform();
-    $dataTransform->transformData($athlete);
-    
+
     Class dataTransform{
         //transform data
         function transformData($athlete){
