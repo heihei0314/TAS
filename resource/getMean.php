@@ -31,10 +31,11 @@
         // output data of each row
         while($row = $result->fetch_assoc()) {
             array_push($dataArray,$row);
+            $profile = $row;
         }
     }
     // Create Array and convert to JSON
-    $json = json_encode($dataArray);
+    $json = json_encode($profile);
     
     // Set header to JSON format
     header('Content-Type: application/json; charset=utf-8');
