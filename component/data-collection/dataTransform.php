@@ -11,8 +11,8 @@
             $dataCollection = new dataCollection();
             $gameAPI = $dataCollection->connectAPI('games');
             $athletesAPI = $dataCollection->connectAPI('athletes');
-            print_r($gameAPI);
-            print_r($athletesAPI);
+            //print_r($gameAPI);
+            //print_r($athletesAPI);
 
             //proceed data transform
             $data=array();
@@ -63,14 +63,14 @@
                     }
                     $temp = array("name"=>$name,"court"=>$court,"color"=>$color,"winlose"=>$winlose,"WinningRound"=>$WinningRound,"Score"=>$Score,"Punch"=>$Punch,"Body"=>$Body,"SpinBody"=>$SpinBody,"SpinHead"=>$SpinHead,"Head"=>$Head,"Warning"=>$Warning);
                     array_push($data,$temp);
-                    print_r($data);
+                    //print_r($data);
                 }
             }
 
             //Store in database
             require_once __DIR__.'/../../resource/controller.php';
             $controller = new Controller();
-            $data = $controller->putGameData($data);
+            $controller->putGameData($data);
             
             return $data;
         }

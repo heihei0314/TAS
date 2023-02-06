@@ -20,8 +20,8 @@ Class Controller{
     }
     
     function putGameData($gameData){
-        $putMeanURL = "https://tas.waitsuentkd.com/resource/putGameData.php";
-        $this->get($putMeanURL, $gameData);          
+        $putGameDataURL = "https://tas.waitsuentkd.com/resource/putGameData.php";
+        $this->get($putGameDataURL, $gameData);          
     }
   
     function putMean($profile){
