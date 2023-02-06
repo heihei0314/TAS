@@ -11,16 +11,7 @@
     //stub athletes name for test (null, one entry data, three entries data)
     $athletesTest = Array("","Lam Ching Ho","Kong Hin Sing");
     print_r($athletesTest);
-            //get data from db for validate
-        require_once __DIR__.'/../../../resource/controller.php';
-        $controller = new Controller();
-        $testWinlose=array();
-        $testDdata = array();
-        foreach ($athletesTest as $athlete){
-            $testDdata = $controller->getGameData($athlete);
-            array_push($testWinlose,$testData['winlose']);
-        }  
-        print_r($testWinlose);
+
     $msg = transformDataTest($athletesTest,$expectedWinlose);
     consoleLog($msg);
     
@@ -45,9 +36,9 @@
         require_once __DIR__.'/../../../resource/controller.php';
         $controller = new Controller();
         $testWinlose=array();
-        $testDdata = array();
+        $testData = array();
         foreach ($athletesTest as $athlete){
-            $testDdata = $controller->getGameData($athlete);
+            $testData = $controller->getGameData($athlete);
             array_push($testWinlose,$testData['winlose']);
         }  
         print_r($testWinlose);
