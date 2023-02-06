@@ -35,7 +35,7 @@
         //get data from db for validate
         require_once __DIR__.'/../../../resource/controller.php';
         $controller = new Controller();
-        $testWinlose=array();
+        $testWinlose=array("");
         $testData = array();
         foreach ($athletesTest as $athlete){
             $testData = $controller->getGameData($athlete);
