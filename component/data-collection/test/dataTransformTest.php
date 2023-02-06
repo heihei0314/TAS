@@ -5,6 +5,13 @@
     $s=0;
     $f=0;
     
+    //stub athletes data for test
+    $athletesTest1 = Array();
+    $athletesTest2 = Array("Lam Ching Ho");
+    $athletesTest3 = Array("Kong Hin Sing");
+    $athletesTest = Array($athletesTest1,$athletesTest2,$athletesTest3);
+    //print_r($athletesTest);
+
     //activate test 
     include '../dataTransform.php';
     $dataTransform = new dataTransform();
@@ -19,12 +26,7 @@
     print_r($gameData);
     //test stub data transformation
     
-    //stub athletes data for test
-    $athletesTest1 = Array();
-    $athletesTest2 = Array("Lam Ching Ho");
-    $athletesTest3 = Array("Kong Hin Sing");
-    $athletesTest = Array($athletesTest1,$athletesTest2,$athletesTest3);
-    //print_r($athletesTest);
+
     
     $expectedWinlose = Array("","Win","Lose","Lose","Win");
     $msg = transformDataTest($athletesTest,$expectedWinlose);
@@ -47,11 +49,7 @@
         $testWinlose=array();
         foreach ($athletesTest as $athlete){
             $dataTransform->transformData($athlete);
-            $gameData = $controller->getGameData($athlete);
-            array_push($testWinlose,$gameData);
-            array_push($testWinlose,$profile['winlose']);
         }        
-        
         
         if($testWinlose==$expectedWinlose){
             $s++;
@@ -63,7 +61,6 @@
         }
         return $msg;
     }
-    
     
     function consoleLog($text){
         echo "<script>console.log('".$text."');</script>";
