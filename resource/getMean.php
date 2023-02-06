@@ -24,7 +24,7 @@
 
     $sql = "SELECT * FROM profile WHERE name='$athlete'";
     $result = $conn->query($sql);
-    print_r($result);
+    
     $conn->close();
     if ($result->num_rows > 0) {
         // output data of each row
