@@ -10,12 +10,12 @@
     $testData = array();
     $testWinlose = array();
     //activate test   
+    include '../dataTransform.php';
     foreach ($athletesTest as $athlete){
         $testData = transformDataTest($athlete);
         array_push($testWinlose,$testData);
         $t++;
     }   
-    
     
     //pring test report
     summary();
@@ -23,7 +23,6 @@
     // test data transformation
     function transformDataTest($athlete){        
         //transform and insert data
-        include '../dataTransform.php';
         $dataTransform = new dataTransform();
         $dataTransform->transformData($athlete);      
         
