@@ -22,7 +22,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT id, firstname, lastname FROM MyGuests";
+    $sql = "SELECT * FROM profile WHERE name='$athlete'";
     $result = $conn->query($sql);
 
     $conn->close();
