@@ -9,7 +9,7 @@
     include '../dataTransform.php';
     $dataTransform = new dataTransform();
     
-    require_once __DIR__.'/../../resource/controller.php';
+    require_once __DIR__.'/../../../resource/controller.php';
     $controller = new Controller();
     $gameData = array();
     foreach ($athletesTest as $athlete){
