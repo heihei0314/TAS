@@ -9,13 +9,12 @@
         $athlete2 = $_POST['athlete2'];
     }
     
-   // change to db;
     include "controller.php";
     $controller = new Controller();
     $meanData1 = $controller->getMean($athlete1);
     $meanData2 = $controller->getMean($athlete2);
     //print_r($meanData1);
-    // change to db;
+
     include "../component/data-analyser/winRate.php";
     $calculator = new winRateCalculator();
     $winRate = $calculator->getWinRate($meanData1,$meanData2);
