@@ -6,7 +6,7 @@
 
         }
         function eventListener(){
-            //postAthlete();
+            //listen message Queue;
         }
         function getDBMean(){
             //get mean from db
