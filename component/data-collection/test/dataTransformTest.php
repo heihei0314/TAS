@@ -1,5 +1,14 @@
 <?php
-    
+            //get data from db for validate
+        require_once __DIR__.'/../../../resource/controller.php';
+        $controller = new Controller();
+        $testWinlose=array();
+        $testDdata = array();
+        foreach ($athletesTest as $athlete){
+            $testDdata = $controller->getGameData($athlete);
+            array_push($testWinlose,$testData['winlose']);
+        }  
+        print_r($testWinlose);
     //initial summary data 
     $t=0;
     $s=0;
@@ -26,7 +35,6 @@
         
         include '../dataTransform.php';
         $dataTransform = new dataTransform();
-        $testWinlose=array();
         foreach ($athletesTest as $athlete){
             //transform and insert data
             $dataTransform->transformData($athlete);
@@ -36,6 +44,7 @@
         //get data from db for validate
         require_once __DIR__.'/../../../resource/controller.php';
         $controller = new Controller();
+        $testWinlose=array();
         $testDdata = array();
         foreach ($athletesTest as $athlete){
             $testDdata = $controller->getGameData($athlete);
