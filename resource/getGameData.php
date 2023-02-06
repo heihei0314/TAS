@@ -1,11 +1,11 @@
 <?php
-    $athlete = "Kong Hin Sing";
+    $athlete = "";
     if(isset($_POST['athlete'])){
         $athlete = $_POST['athlete'];
     }
     
     require_once '../conf/db_configs.php';
-	$conn = new mysqli(host, username, password, dbname);// Check connection
+    $conn = new mysqli(host, username, password, dbname);// Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
