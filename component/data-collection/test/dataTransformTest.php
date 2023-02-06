@@ -8,18 +8,25 @@
     //activate test 
     include '../dataTransform.php';
     $dataTransform = new dataTransform();
-
     
+    require_once __DIR__.'/../../resource/controller.php';
+    $controller = new Controller();
+    $gameData = array();
+    foreach ($athletesTest as $athlete){
+        $data = $controller->getGameData($athlete);
+        array_push($gameData,$data);
+    }  
+    print_r($gameData);
     //test stub data transformation
     
     //stub athletes data for test
     $athletesTest1 = Array();
     $athletesTest2 = Array("Lam Ching Ho");
-    $athletesTest3 = Array("Kong Hin Shing");
+    $athletesTest3 = Array("Kong Hin Sing");
     $athletesTest = Array($athletesTest1,$athletesTest2,$athletesTest3);
     //print_r($athletesTest);
     
-    $expectedWinlose = Array("","Win","Win","Win","Lose");
+    $expectedWinlose = Array("","Win","Lose","Lose","Win");
     $msg = transformDataTest($athletesTest,$expectedWinlose);
     consoleLog($msg);
     
