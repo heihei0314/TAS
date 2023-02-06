@@ -1,5 +1,8 @@
 <?php
-    
+    $athlete = 'Lam Ching Ho';
+    $dataTransform = new dataTransform();
+    $dataTransform->transformData($athlete);
+
     Class dataTransform{
         //transform data
         function transformData($athlete){
@@ -8,12 +11,14 @@
             $dataCollection = new dataCollection();
             $gameAPI = $dataCollection->connectAPI('games');
             $athletesAPI = $dataCollection->connectAPI('athletes');
-            
+            print_r($gameAPI);
+            print_r($athletesAPI);
+
             //proceed data transform
             $data=array();
             foreach ($athletesAPI as $a){
-                if(is_null($a)){ $temp = array();}
-                else if($a['name']==$athlete){
+                $temp = array();
+                if($a['name']==$athlete){
                     $name = $a['name'];
                     $court = $a['court'];
                     $color = $a['Color'];
@@ -29,7 +34,6 @@
                         else {
                             $winlose = 'Lose';
                         }
-                        //get winlose
         
                         //mapping data
                         switch ($color){
@@ -59,7 +63,7 @@
                     }
                     $temp = array("name"=>$name,"court"=>$court,"color"=>$color,"winlose"=>$winlose,"WinningRound"=>$WinningRound,"Score"=>$Score,"Punch"=>$Punch,"Body"=>$Body,"SpinBody"=>$SpinBody,"SpinHead"=>$SpinHead,"Head"=>$Head,"Warning"=>$Warning);
                     array_push($data,$temp);
-                    print_r($temp);
+                    print_r($data);
                 }
             }
 
