@@ -1,7 +1,7 @@
 <?php
     
     //stub athletes' name for test cases
-    $allAthletes = Array("","Dabin LEE","Tae-Joon PARK");
+    $allAthletes = Array("","Lam Ching Ho","Kong Hin Sing");
     $gameData1 = Array();
     $gameData2 = Array(Array("name"=>"Dabin LEE","court"=>"P0","color"=>"R","winlose"=>"Win","WinningRound"=>"2","Score"=>"32","Punch"=>"0","Body"=>"6","SpinBody"=>"5","SpinHead"=>"0","Head"=>"0","Warning"=>"0"));
     $gameData3 = Array(Array("name"=>"Tae-Joon PARK","court"=>"P0","color"=>"B","winlose"=>"lose","WinningRound"=>"1","Score"=>"15","Punch"=>"0","Body"=>"0","SpinBody"=>"0","SpinHead"=>"3","Head"=>"0","Warning"=>"0"),Array("name"=>"Tae-Joon PARK","court"=>"P0","color"=>"R","winlose"=>"Win","WinningRound"=>"2","Score"=>"11","Punch"=>"0","Body"=>"6","SpinBody"=>"5","SpinHead"=>"0","Head"=>"0","Warning"=>"0"));
@@ -24,7 +24,7 @@
         $analyser = new Profile();
         $i=0;
         foreach($allAthletes as $athlete){
-            $profile = $analyser->calculater($data[$i]);
+            $profile = $analyser->calculateMean($data[$i]);
             $i++;
             array_push($testScore,$profile['Score']);
         }   
