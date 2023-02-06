@@ -1,5 +1,5 @@
 <?php
-    $athlete = "";
+    $athlete = "Lam Ching Ho";
     if(isset($_POST['athlete'])){
         $athlete = $_POST['athlete'];
     }
