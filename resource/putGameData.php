@@ -13,7 +13,7 @@
 		$Warning = "";
 		
 		if(isset($_POST["name"])){
-        		$name = $_POST["name"];
+        	$name = $_POST["name"];
 			$court = $_POST["court"];
 			$color = $_POST["color"];
 			$winlose = $_POST["winlose"];
@@ -25,7 +25,7 @@
 			$SpinHead = $_POST["SpinHead"];
 			$Head = $_POST["Head"];
 			$Warning = $_POST["Warning"];
-    		}
+    	}
 		// Establishing Connection with Database
 		require_once '../conf/db_configs.php';
 		$conn = new mysqli(host, username, password, dbname);
