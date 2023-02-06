@@ -33,7 +33,7 @@
 			die("Connection failed: " . $conn->connect_error);
 		} 
 		// Establishing Connection with Database
-		$sql = "REPLACE INTO gameData (name, court, color, winlose, WinningRound, Score, Punch, Body, SpinBody, SpinHead, Head, Warning) VALUES ('$name', '$court', '$color', '$winlose', '$WinningRound', '$Score', '$Punch', '$Body', '$SpinBody', '$SpinHead', '$Head', '$Warning')";
+		$sql = "REPLACE INTO gameData (`name`, court, color, winlose, WinningRound, Score, Punch, Body, SpinBody, SpinHead, Head, Warning) VALUES ('$name', '$court', '$color', '$winlose', '$WinningRound', '$Score', '$Punch', '$Body', '$SpinBody', '$SpinHead', '$Head', '$Warning')";
 			
 		if ($conn->query($sql) === TRUE) {
 			echo $sql;
