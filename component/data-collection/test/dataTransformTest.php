@@ -5,12 +5,9 @@
     $s=0;
     $f=0;
     
-    //stub athletes data for test
-    $athletesTest1 = Array();
-    $athletesTest2 = Array("Lam Ching Ho");
-    $athletesTest3 = Array("Kong Hin Sing");
-    $athletesTest = Array($athletesTest1,$athletesTest2,$athletesTest3);
-    //print_r($athletesTest);
+    //stub athletes data for test (null, one entry data, three entries data)
+    $athletesTest = Array("","Lam Ching Ho","Kong Hin Sing");
+    print_r($athletesTest);
 
     //activate test 
     include '../dataTransform.php';
@@ -43,9 +40,6 @@
         global $dataTransform;
         $t++;
         
-        require_once __DIR__.'/../../resource/controller.php';
-        $controller = new Controller();
-        $mappedData = array();
         $testWinlose=array();
         foreach ($athletesTest as $athlete){
             $dataTransform->transformData($athlete);
