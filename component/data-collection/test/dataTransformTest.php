@@ -51,9 +51,11 @@
         global $s;
         global $f;
         global $testWinlose;
+        $i=0;
         $expectedWinlose = Array(array(""),array("Win"),array("Lose","Lose","Win"));  
         foreach ($testWinlose as $result){
-            if($result==$expectedWinlose){
+            print_r($expectedWinlose[$i]);
+            if($result==$expectedWinlose[$i]){
                 $s++;
                 consoleLog('Transform data succeed');
             }
@@ -61,6 +63,7 @@
                 $f++;
                 consoleLog('Wrong Win Lose data');
             }
+            $i++;
         }
         $summary = "test cases: ".$t.", success: ".$s.", fail: ".$f;
         consoleLog($summary);
