@@ -1,5 +1,5 @@
 <?php
-    $athlete = "Kong Hin Sing";
+    $athlete = "";
     if(isset($_POST['athlete'])){
         $athlete = $_POST['athlete'];
     }
@@ -14,6 +14,7 @@
     $result = $conn->query($sql);
     
     $conn->close();
+    $mappedData = array();
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
