@@ -5,27 +5,13 @@
     $s=0;
     $f=0;
     
-    //stub athletes data for test (null, one entry data, three entries data)
+    //activate test     
+    $expectedWinlose = Array("","Win","Lose","Lose","Win");
+
+    //stub athletes name for test (null, one entry data, three entries data)
     $athletesTest = Array("","Lam Ching Ho","Kong Hin Sing");
     print_r($athletesTest);
 
-    //activate test 
-    include '../dataTransform.php';
-    $dataTransform = new dataTransform();
-    
-    require_once __DIR__.'/../../../resource/controller.php';
-    $controller = new Controller();
-    $gameData = array();
-    foreach ($athletesTest as $athlete){
-        $data = $controller->getGameData($athlete);
-        array_push($gameData,$data);
-    }  
-    print_r($gameData);
-    //test stub data transformation
-    
-
-    
-    $expectedWinlose = Array("","Win","Lose","Lose","Win");
     $msg = transformDataTest($athletesTest,$expectedWinlose);
     consoleLog($msg);
     
@@ -37,13 +23,25 @@
         global $t;
         global $s;
         global $f;
-        global $dataTransform;
-        $t++;
         
+        include '../dataTransform.php';
+        $dataTransform = new dataTransform();
         $testWinlose=array();
         foreach ($athletesTest as $athlete){
+            //transform and insert data
             $dataTransform->transformData($athlete);
+            $t++;
         }        
+        
+        //get data from db for validate
+        require_once __DIR__.'/../../../resource/controller.php';
+        $controller = new Controller();
+        $gameData = array();
+        foreach ($athletesTest as $athlete){
+            $testDdata = $controller->getGameData($athlete);
+            array_push($testWinlose,$testData['winlose']);
+        }  
+        print_r($testWinlose);
         
         if($testWinlose==$expectedWinlose){
             $s++;
