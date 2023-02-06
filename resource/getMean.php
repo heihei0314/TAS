@@ -24,7 +24,7 @@
 
     $sql = "SELECT * FROM profile WHERE name='$athlete'";
     $result = $conn->query($sql);
-
+    print_r($result);
     $conn->close();
 
     // Create Array and convert to JSON
