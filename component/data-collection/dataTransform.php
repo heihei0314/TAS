@@ -1,11 +1,4 @@
 <?php
-    /*$test = "Lam Ching Ho";
-    if(isset($_GET['test'])){
-        $test = $_GET['test'];
-    }
-    echo $test;
-    $dataTransform = new dataTransform();
-    $dataTransform->transformData($test);*/
         
     Class dataTransform{
         //transform data

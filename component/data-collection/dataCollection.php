@@ -4,7 +4,7 @@
         //get data from public API
         function connectAPI($data_key){
             //connect to resource
-            $url = "https://www.waitsuentkd.com/sparring/API/resource.php";
+            $url = "http://www.waitsuentkd.com/sparring/API/resource.php";
     
             //connect to resource
             $options = array(

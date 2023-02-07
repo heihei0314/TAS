@@ -2,14 +2,14 @@
     
 Class Controller{
     function getAthletes(){
-        $athletesURL = "https://tas.waitsuentkd.com/resource/getAthletes.php";
+        $athletesURL = "http://tas.waitsuentkd.com/resource/getAthletes.php";
         $data=array();
         $allAthletes = $this->get($athletesURL,$data);
         return $allAthletes;
     }
     
     function getGameData($athlete){
-        $gameURL = "https://tas.waitsuentkd.com/resource/getGameData.php";
+        $gameURL = "http://tas.waitsuentkd.com/resource/getGameData.php";
         $athleteData = array('athlete' => $athlete);
         $gameData = $this->get($gameURL, $athleteData);
         return $gameData;
@@ -20,29 +20,29 @@ Class Controller{
     }
     
     function putGameData($gameData){
-        $putGameDataURL = "https://tas.waitsuentkd.com/resource/putGameData.php";
+        $putGameDataURL = "http://tas.waitsuentkd.com/resource/putGameData.php";
         $this->get($putGameDataURL, $gameData);          
     }
   
     function putMean($profile){
-        $putMeanURL = "https://tas.waitsuentkd.com/resource/putMean.php";
+        $putMeanURL = "http://tas.waitsuentkd.com/resource/putMean.php";
         $this->get($putMeanURL, $profile);        
     }
 
     function getMean($athlete){
-        $meanURL = "https://tas.waitsuentkd.com/resource/getMean.php";
+        $meanURL = "http://tas.waitsuentkd.com/resource/getMean.php";
         $athleteData = array('athlete' => $athlete);
         $meanData = $this->get($meanURL, $athleteData);
         return $meanData;
     }
     
     function putWinRate($WinRate){
-        $putWinRateURL = "https://tas.waitsuentkd.com/resource/putWinRate.php";
+        $putWinRateURL = "http://tas.waitsuentkd.com/resource/putWinRate.php";
         $this->get($putWinRateURL, $WinRate);        
     }
     
     function getWinRate($meanData1,$meanData2){
-        $winRateURL = "https://tas.waitsuentkd.com/resource/getWinRate.php";
+        $winRateURL = "http://tas.waitsuentkd.com/resource/getWinRate.php";
         $meanDataArray = array('meanData1' => $meanData1, 'meanData2' => $meanData2);
         $winRateData = $this->get($winRateURL, $meanDataArray);
         return $winRateData;
