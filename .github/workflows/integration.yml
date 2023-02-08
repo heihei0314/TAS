@@ -12,6 +12,16 @@ jobs:
       steps:
         - name: Checkout
           uses: actions/checkout@v3
+        
+        - name: Setup PHP
+          uses: shivammathur/setup-php@v2
+          with:
+            php-version: '8.1'
+            extensions: curl, mysqli
+            coverage: xdebug
+            
+        - name: Install dependencies
+          run: composer install --prefer-dist --no-progress
 
         - name: PHPUnit
           uses: chindit/actions-phpunit@1.0.0
