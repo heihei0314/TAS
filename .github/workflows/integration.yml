@@ -20,8 +20,10 @@ jobs:
        #     extensions: curl, mysqli
        #     coverage: xdebug
 
-        - name: PHPUnit tests
+        - name: composer
           uses: php-actions/composer@v6 # or alternative dependency management
+        
+        - name: PHPUnit tests
           uses: php-actions/phpunit@v3
           #run: composer install --prefer-dist --no-progress
           with:
