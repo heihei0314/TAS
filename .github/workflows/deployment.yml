@@ -12,4 +12,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: 
-        git push 
+        git remote add cpanel https://github.com/heihei0314/TAS.git
+        git push cpanel
