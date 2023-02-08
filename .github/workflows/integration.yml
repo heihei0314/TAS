@@ -13,15 +13,19 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v3
         
-        - name: Setup PHP
-          uses: shivammathur/setup-php@v2
+     #   - name: Setup PHP
+       #   uses: shivammathur/setup-php@v2
+       #   with:
+       #     php-version: '8.1'
+       #     extensions: curl, mysqli
+       #     coverage: xdebug
+
+        - name: PHPUnit tests
+          uses: php-actions/composer@v6 # or alternative dependency management
+          uses: php-actions/phpunit@v3
+          #run: composer install --prefer-dist --no-progress
           with:
-            php-version: '8.1'
-            extensions: curl, mysqli
-            coverage: xdebug
-
-        - name: Install dependencies
-          run: composer install --prefer-dist --no-progress
-
-        - name: PHPUnit
-          uses: chindit/actions-phpunit@1.0.0
+            bootstrap: vendor/autoload.php
+            configuration: test/phpunit.xml
+            args: --coverage-text
+            php_version: "7.4"
