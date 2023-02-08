@@ -6,7 +6,7 @@
     $f=0;
     
     //activate test 
-    include '../dataCollection.php';
+    include '../component/data-collection/dataCollection.php';
     $dataCollection = new dataCollection();
     
     //test public API connection

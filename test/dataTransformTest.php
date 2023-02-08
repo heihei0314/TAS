@@ -10,7 +10,7 @@
     $testData = array();
     $testWinlose = array();
     //activate test   
-    include '../dataTransform.php';
+    include '../component/data-collection/dataTransform.php';
     foreach ($athletesTest as $athlete){
         $testData = transformDataTest($athlete);
         array_push($testWinlose,$testData);
@@ -27,7 +27,7 @@
         $dataTransform->transformData($athlete);      
         
         //get data from db for validate
-        require_once __DIR__.'/../../../resource/controller.php';
+        require_once __DIR__.'/../resource/controller.php';
         $controller = new Controller();
         $gameData = array();
         $test = array();

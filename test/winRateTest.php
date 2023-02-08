@@ -19,7 +19,7 @@
         //print_r($data);
         
         global $winRateTestResult;
-        include "../winRate.php";
+        include "../component/data-analyser/winRate.php";
         $winRateAnalyser = new winRateCalculator();
         $winRateTestResult = $winRateAnalyser->getWinRate($meanData1, $meanData2);
     }

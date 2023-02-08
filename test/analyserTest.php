@@ -20,7 +20,7 @@
         global $testScore;
         $testScore =array();
         
-        include "../analyser.php";
+        include "../component/data-analyser/analyser.php";
         $analyser = new Profile();
         $i=0;
         foreach($allAthletes as $athlete){
