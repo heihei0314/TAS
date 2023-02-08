@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: 
-        git remote add cpanel https://github.com/heihei0314/TAS.git
-        git push cpanel
+      - run: |
+          git remote add cpanel https://github.com/heihei0314/TAS.git
+          git push cpanel

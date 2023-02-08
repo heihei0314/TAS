@@ -1,4 +1,4 @@
-name: GitHub Action CI2
+name: GitHub Action CI 2
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
             php-version: '8.1'
             extensions: curl, mysqli
             coverage: xdebug
-            
+
         - name: Install dependencies
           run: composer install --prefer-dist --no-progress
 
