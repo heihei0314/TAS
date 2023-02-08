@@ -13,13 +13,8 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v3
 
-        - name: Setup PHP
-          uses: franzliedke/gh-action-php@0.2.0
+        - name: Install dependencies
+          run: composer install --prefer-dist --no-progress --no-suggest
 
-        - name: Install composer dependencies
-          uses: ramsey/composer-install@v2
-          with:
-            dependency-versions: ${{ matrix.dependency-versions }}
-
-        - name: Run PHPUnit
-          run: vendor/bin/phpunit tests
+        - name: PHPUnit
+          uses: chindit/actions-phpunit@1.0.0
