@@ -1,0 +1,15 @@
+name: GitHub Action CD
+
+on:
+  workflow_run:
+    workflows: [ GitHub Action CI ]
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: 
+        git push 
