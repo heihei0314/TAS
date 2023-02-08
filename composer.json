@@ -1,5 +1,5 @@
 {
-	"name": "TAS",
+	"name": "tas",
 	"description": "Analyse Taekwondo athletes' preformance",
 
 	"require-dev": {
