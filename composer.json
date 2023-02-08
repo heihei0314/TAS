@@ -3,6 +3,7 @@
 	"description": "Analyse Taekwondo athletes' preformance",
 
 	"require-dev": {
+        "php": "8.*",
 		"ext-curl": "*",
 		"ext-dom": "*",
 		"ext-json": "*",
