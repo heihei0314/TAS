@@ -16,8 +16,9 @@
             $dataTransform = new dataTransform();
             foreach ($athletesTest as $athlete){
                $dataset = $dataTransform->transformData($athlete);   
+               array_push($testResult,count($dataset));
             }   
-            array_push($testResult,count($dataset));
+            
             $this->assertEquals($expectedDataCount, $testResult);
         }
     }

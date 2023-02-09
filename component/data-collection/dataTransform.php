@@ -1,5 +1,7 @@
 <?php
-        
+    $test = new dataTransform();
+    $testResult = $test->transformData("");
+    print_r(count($testResult));
     Class dataTransform{
         //transform data
         function transformData($athlete){
