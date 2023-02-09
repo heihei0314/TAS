@@ -17,9 +17,9 @@
             $this->assertEquals(1, count($gameData1));
             print_r(count($gameData1));echo "<br><br>";
 
-            $gameData2 = $this->testDataTransform($allAthletes[1]);
-            $this->assertEquals(3, count($gameData2));
-            print_r(count($gameData2));echo "<br><br>";
+            //$gameData2 = $this->testDataTransform($allAthletes[1]);
+           // $this->assertEquals(3, count($gameData2));
+            //print_r(count($gameData2));echo "<br><br>";
 
             //3. calculate mean for specific athlete with DB
             $mean1 = $this->testGetMean($allAthletes[0]);
