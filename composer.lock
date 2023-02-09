@@ -1748,8 +1748,7 @@
         "ext-curl": "*",
         "ext-dom": "*",
         "ext-json": "*",
-        "ext-sqlite3": "*",
-        "ext-mysqli": "*"
+        "ext-sqlite3": "*"
     },
     "plugin-api-version": "2.2.0"
 }
