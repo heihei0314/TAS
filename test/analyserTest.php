@@ -13,7 +13,7 @@
             $expectedScore = Array(0,32,13);
         
             //activiate test
-            include "../component/data-analyser/analyser.php";
+            require_once __DIR__.'/../component/data-analyser/analyser.php';
             $analyser = new Profile();
             $i=0;
             foreach($allAthletes as $athlete){
