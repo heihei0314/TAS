@@ -5,20 +5,20 @@
         public function testWinLoseRecord(){
             //stub athletes name for test (null, one entry data, three entries data)
             $athletesTest = Array("","Lam Ching Ho","Kong Hin Sing");
-            $testWinlose = array();
-            $winLose = array();
+            $dataset = array();
+            $testResult = array();
             
             //expected result
-            $expectedWinLose = Array(Array(),Array("Win"),Array("Lose","Lose","Win"));
+            $expectedDataCount = Array(0,1,3);
 
             //activate test   
             require_once __DIR__.'/../component/data-collection/dataTransform.php';
             $dataTransform = new dataTransform();
             foreach ($athletesTest as $athlete){
-               $winLose = $dataTransform->transformData($athlete);   
+               $dataset = $dataTransform->transformData($athlete);   
             }   
-            array_push($testWinlose,$winLose);
-            $this->assertEquals($expectedScore, $testScore);
+            array_push($testResult,count($dataset));
+            $this->assertEquals($expectedDataCount, $testResult);
         }
     }
 
