@@ -4,7 +4,7 @@
     use App\component;
 
     class analyserTest extends \PHPUnit\Framework\TestCase{
-        public function testCalculator($allAthletes, $data){
+        public function testCalculator(){
             //stub athletes' name for test cases
             $allAthletes = Array("","Lam Ching Ho","Kong Hin Sing");
             $gameData1 = Array();
