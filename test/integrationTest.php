@@ -11,7 +11,9 @@
             print_r( $allAthletes);echo "<br><br>";
 
             //2. transform specific athlete game data
-            $gameData1 = $this->testDataTransform("Lam Ching Ho");
+            require_once __DIR__.'/../component/data-collection/dataTransform.php';
+            $dataTransform = new dataTransform();
+            $dataset = $dataTransform->transformData($allAthletes[0]);   
             $this->assertEquals(1, count($gameData1));
             print_r(count($gameData1));echo "<br><br>";
 
@@ -46,7 +48,7 @@
             $dataset = array();
             require_once __DIR__.'/../component/data-collection/dataTransform.php';
             $dataTransform = new dataTransform();
-               $dataset = $dataTransform->transformData($case);   
+            $dataset = $dataTransform->transformData($case);   
             
             
             $this->assertEquals(1, $dataset);
