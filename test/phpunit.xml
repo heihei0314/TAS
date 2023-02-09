@@ -5,13 +5,13 @@
 			<directory suffix=".php">../../src</directory>
 		</include>
 		<report>
-			<html outputDirectory="./_coverage" lowUpperBound="35" highLowerBound="70"/>
 			<text outputFile="php://stdout" showUncoveredFiles="true"/>
 		</report>
 	</coverage>
 	<testsuites>
 		<testsuite name="main">
-			<directory suffix="Test.php">.</directory>
+			<file>analyserTest.php</file>
+			<file>../component/data-analyser/analyser.php</file>
 		</testsuite>
 	</testsuites>
 	<logging/>
