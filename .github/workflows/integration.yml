@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-    check-bats-version:
+    check-and-test:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
