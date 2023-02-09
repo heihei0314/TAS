@@ -14,7 +14,7 @@
         
             //activiate test
             include "../component/data-analyser/analyser.php";
-            $analyser = new analyser();
+            $analyser = new Profile();
             $i=0;
             foreach($allAthletes as $athlete){
                 $profile = $analyser->calculator($athlete,$data[$i]);

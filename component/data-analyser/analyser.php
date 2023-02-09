@@ -1,6 +1,6 @@
 <?php
 
-class analyser {
+class Profile {
     
     function calculateMean($athlete){
         //grab the game data from db
