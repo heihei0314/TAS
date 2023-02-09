@@ -16,6 +16,8 @@
             require_once __DIR__.'/../component/data-analyser/analyser.php';
             $analyser = new Profile();
             $i=0;
+            $profile = array();
+            $testScore = array();
             foreach($allAthletes as $athlete){
                 $profile = $analyser->calculator($athlete,$data[$i]);
                 $i++;
