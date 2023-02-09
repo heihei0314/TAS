@@ -1,7 +1,7 @@
 <?php
-    namespace App\Test;
+    use PHPUnit\Framework\TestCase;
 
-    use App\analyser;
+    use \component\dataanalyser\analyser;
 
     class analyserTest extends \PHPUnit\Framework\TestCase{
         public function testCalculator(){
