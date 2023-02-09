@@ -17,6 +17,7 @@
 
             //proceed data transform
             $data=array();
+            $testResult = array();
             foreach ($athletesAPI as $a){
                 if($a['name']==$athlete){
                     $name = $a['name'];
@@ -59,7 +60,8 @@
                                 break;
                         }
                         $data = array("name"=>$name,"court"=>$court,"color"=>$color,"winlose"=>$winlose,"WinningRound"=>$WinningRound,"Score"=>$Score,"Punch"=>$Punch,"Body"=>$Body,"SpinBody"=>$SpinBody,"SpinHead"=>$SpinHead,"Head"=>$Head,"Warning"=>$Warning);
-                    
+                        
+                        array_push($testResult,$data['winlose']);
                         //Store in database
                         $controller->putGameData($data);
                     //print_r($data);
@@ -67,6 +69,7 @@
                     }               
                 }
             }             
+            return $testResult;
         }
     }
 ?>
