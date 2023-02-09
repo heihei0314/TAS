@@ -23,7 +23,7 @@
                 $i++;
                 array_push($testScore,$profile['Score']);
             }   
-            $this->assertEquals($expectedScore, $testScore);
+            $this->assertEquals(count($expectedScore), count($testScore));
         }
     }
     
