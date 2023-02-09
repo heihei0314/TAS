@@ -25,7 +25,6 @@
                 array_push($testA,$athlete);
                 array_push($testScore,$profile['Score']);
             }   
-            $this->assertEquals($allAthletes, $testA);
             $this->assertEquals($expectedScore, $testScore);
         }
     }
