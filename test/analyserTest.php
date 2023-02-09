@@ -1,8 +1,6 @@
 <?php
     use PHPUnit\Framework\TestCase;
 
-    use \component\dataanalyser\analyser;
-
     class analyserTest extends \PHPUnit\Framework\TestCase{
         public function testCalculator(){
             //stub athletes' name for test cases
@@ -15,6 +13,7 @@
             $expectedScore = Array(0,32,13);
         
             //activiate test
+            include "../component/data-analyser/analyser.php";
             $analyser = new Profile();
             $i=0;
             foreach($allAthletes as $athlete){
