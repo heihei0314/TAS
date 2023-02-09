@@ -11,7 +11,7 @@
             print_r( $allAthletes);echo "<br><br>";
 
             //2. transform specific athlete game data
-            $gameData1 = $this->testDataTransform($allAthletes[0]);
+            $gameData1 = $this->testDataTransform("Lam Ching Ho");
             $this->assertEquals(1, count($gameData1));
             print_r(count($gameData1));echo "<br><br>";
 
