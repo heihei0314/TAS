@@ -10,8 +10,8 @@
 	</coverage>
 	<testsuites>
 		<testsuite name="main">
-			<file>analyserTest.php</file>
-			<file>../component/data-analyser/analyser.php</file>
+			<directory suffix="Test.php">.</directory>
+			
 		</testsuite>
 	</testsuites>
 	<logging/>
