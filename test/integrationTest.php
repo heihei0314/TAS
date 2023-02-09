@@ -7,7 +7,7 @@
             //1. get athlete name from API
             $allAthletes = $this->testGetAthletes();
             $this->assertGreaterThan(0,count($allAthletes));
-            $this->assertEquals("Lam Ching Ho",$testCase1);
+            $this->assertEquals("Lam Ching Ho",$allAthletes[0]);
             print_r( $allAthletes);echo "<br><br>";
 
             //2. transform specific athlete game data
@@ -45,30 +45,5 @@
             $controller = new Controller();
             $allAthletes = $controller->getAthletes();
             return $allAthletes;
-        }
-
-        public function testDataTransform($case){
-            $dataset = array();
-            require_once __DIR__.'/../component/data-collection/dataTransform.php';
-            $dataTransform = new dataTransform();
-            $dataset = $dataTransform->transformData($case);   
-            
-            
-            $this->assertEquals(1, $dataset);
-            return $dataset;
-        }
-
-        public function testGetMean($case){
-            require_once __DIR__.'/../component/data-analyser/analyser.php';
-            $analyser = new Profile();
-            $profile = $analyser->calculateMean($case);
-            return $profile;
-        }
-
-        public function testGetWinRate($mean1,$mean2){
-            require_once __DIR__.'/../component/data-analyser/winRate.php';
-            $winRateAnalyser = new winRateCalculator();
-            $winRateTestResult = $winRateAnalyser->getWinRate($mean1,$mean2);
-            return $winRateTestResult;
         }
     }
