@@ -5,10 +5,12 @@
     class integrationTest extends \PHPUnit\Framework\TestCase{
         public function testApp(){
             //1. get athlete name from API
-            $allAthletes = $this->testGetAthletes();
+            require_once __DIR__.'/../resource/controller.php';
+            $controller = new Controller();
+            $allAthletes = $controller->getAthletes();
             $this->assertGreaterThan(0,count($allAthletes));
             $this->assertEquals("Lam Ching Ho",$allAthletes[0]);
-            print_r( $allAthletes);echo "<br><br>";
+            print_r($allAthletes);echo "<br><br>";
 
             //2. transform specific athlete game data
             require_once __DIR__.'/../component/data-collection/dataTransform.php';
@@ -28,7 +30,7 @@
             print_r($mean1);echo "<br><br>";
             $this->assertEquals(3, $mean1['Score']);
 
-            $mean1 = $analyser->calculateMean($allAthletes[1]);
+            $mean2 = $analyser->calculateMean($allAthletes[1]);
             print_r($mean2);echo "<br><br>";
             $this->assertEquals(15, $mean2['Score']);
 
@@ -39,11 +41,5 @@
             $this->assertEquals(array('0%','100%'), $winRateTestResult);
             print_r($winRateTestResult);echo "<br><br>";
 
-        }
-        public function testGetAthletes(){
-            require_once __DIR__.'/../resource/controller.php';
-            $controller = new Controller();
-            $allAthletes = $controller->getAthletes();
-            return $allAthletes;
         }
     }
