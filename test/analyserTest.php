@@ -1,13 +1,34 @@
 <?php
+    namespace App\Test;
+
+    use App\component;
+
+    class analyserTest extends \PHPUnit\Framework\TestCase{
+        public function testCalculator($allAthletes, $data){
+            //stub athletes' name for test cases
+            $allAthletes = Array("","Lam Ching Ho","Kong Hin Sing");
+            $gameData1 = Array();
+            $gameData2 = Array(Array("name"=>"Lam Ching Ho","court"=>"P0","color"=>"R","winlose"=>"Win","WinningRound"=>"2","Score"=>"32","Punch"=>"0","Body"=>"6","SpinBody"=>"5","SpinHead"=>"0","Head"=>"0","Warning"=>"0"));
+            $gameData3 = Array(Array("name"=>"Kong Hin Sing","court"=>"P0","color"=>"B","winlose"=>"lose","WinningRound"=>"1","Score"=>"15","Punch"=>"0","Body"=>"0","SpinBody"=>"0","SpinHead"=>"3","Head"=>"0","Warning"=>"0"),Array("name"=>"Kong Hin Sing","court"=>"P0","color"=>"R","winlose"=>"Win","WinningRound"=>"2","Score"=>"11","Punch"=>"0","Body"=>"6","SpinBody"=>"5","SpinHead"=>"0","Head"=>"0","Warning"=>"0"));
+            $gameData = Array($gameData1,$gameData2,$gameData3);
+            //expected result
+            $expectedScore = Array(0,32,13);
+        
+            //activiate test
+            $analyser = new Profile();
+            $i=0;
+            foreach($allAthletes as $athlete){
+                $profile = $analyser->calculator($athlete,$data[$i]);
+                $i++;
+                array_push($testScore,$profile['Score']);
+            }   
+            $this->assertSame($expectedScore, $testScore);
+        }
+    }
     
-    //stub athletes' name for test cases
-    $allAthletes = Array("","Lam Ching Ho","Kong Hin Sing");
-    $gameData1 = Array();
-    $gameData2 = Array(Array("name"=>"Dabin LEE","court"=>"P0","color"=>"R","winlose"=>"Win","WinningRound"=>"2","Score"=>"32","Punch"=>"0","Body"=>"6","SpinBody"=>"5","SpinHead"=>"0","Head"=>"0","Warning"=>"0"));
-    $gameData3 = Array(Array("name"=>"Tae-Joon PARK","court"=>"P0","color"=>"B","winlose"=>"lose","WinningRound"=>"1","Score"=>"15","Punch"=>"0","Body"=>"0","SpinBody"=>"0","SpinHead"=>"3","Head"=>"0","Warning"=>"0"),Array("name"=>"Tae-Joon PARK","court"=>"P0","color"=>"R","winlose"=>"Win","WinningRound"=>"2","Score"=>"11","Punch"=>"0","Body"=>"6","SpinBody"=>"5","SpinHead"=>"0","Head"=>"0","Warning"=>"0"));
-    $gameData = Array($gameData1,$gameData2,$gameData3);
     
-    //activiate test
+    
+/*
     analyserTest($allAthletes, $gameData);
     
     //print test report
@@ -24,7 +45,7 @@
         $analyser = new Profile();
         $i=0;
         foreach($allAthletes as $athlete){
-            $profile = $analyser->calculateMean($data[$i]);
+            $profile = $analyser->calculator($athlete,$data[$i]);
             $i++;
             array_push($testScore,$profile['Score']);
         }   
@@ -61,5 +82,5 @@
         $summary = "test cases: ".$t.", success: ".$s.", fail: ".$f;
         print_r($summary);
         consoleLog($summary);
-    }
+    }*/
 ?>

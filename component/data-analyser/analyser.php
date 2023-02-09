@@ -3,11 +3,21 @@
 class Profile {
     
     function calculateMean($athlete){
-        
+        //grab the game data from db
         require_once __DIR__.'/../../resource/controller.php';
         $controller = new Controller();
         $data = $controller->getGameData($athlete);
 
+        //call the calculator
+        $profile = array();
+        $profile = $this->calculator($athlete, $data);
+
+        //update the mean preformance to db
+        $controller->putMean($profile);
+        return $profile;
+    }
+    
+    function calculator($athlete, $data){
         $n=0;
         $name = $athlete;
         $win=0;
@@ -52,9 +62,7 @@ class Profile {
         }
         $profile = array("name"=>$name,"win"=>$win,"lose"=>$lose,"WinningRound"=>$m_WinningRound,"Score"=>$m_Score,"Punch"=>$m_Punch,"Body"=>$m_Body,"SpinBody"=>$m_SpinBody,"SpinHead"=>$m_SpinHead,"Head"=>$m_Head,"Warning"=>$m_Warning);
         //print_r($profile);
-        
-        $data = $controller->putMean($profile);
-            
+                    
         return $profile;
     }
 }

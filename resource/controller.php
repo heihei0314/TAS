@@ -4,14 +4,14 @@ Class Controller{
     function getAthletes(){
         $athletesURL = "http://tas.waitsuentkd.com/resource/getAthletes.php";
         $data=array();
-        $allAthletes = $this->get($athletesURL,$data);
+        $allAthletes = $this->gateway($athletesURL,$data);
         return $allAthletes;
     }
     
     function getGameData($athlete){
         $gameURL = "http://tas.waitsuentkd.com/resource/getGameData.php";
         $athleteData = array('athlete' => $athlete);
-        $gameData = $this->get($gameURL, $athleteData);
+        $gameData = $this->gateway($gameURL, $athleteData);
         return $gameData;
     }
     
@@ -21,34 +21,34 @@ Class Controller{
     
     function putGameData($gameData){
         $putGameDataURL = "http://tas.waitsuentkd.com/resource/putGameData.php";
-        $this->get($putGameDataURL, $gameData);          
+        $this->gateway($putGameDataURL, $gameData);          
     }
   
     function putMean($profile){
         $putMeanURL = "http://tas.waitsuentkd.com/resource/putMean.php";
-        $this->get($putMeanURL, $profile);        
+        $this->gateway($putMeanURL, $profile);        
     }
 
     function getMean($athlete){
         $meanURL = "http://tas.waitsuentkd.com/resource/getMean.php";
         $athleteData = array('athlete' => $athlete);
-        $meanData = $this->get($meanURL, $athleteData);
+        $meanData = $this->gateway($meanURL, $athleteData);
         return $meanData;
     }
     
     function putWinRate($WinRate){
         $putWinRateURL = "http://tas.waitsuentkd.com/resource/putWinRate.php";
-        $this->get($putWinRateURL, $WinRate);        
+        $this->gateway($putWinRateURL, $WinRate);        
     }
     
     function getWinRate($meanData1,$meanData2){
         $winRateURL = "http://tas.waitsuentkd.com/resource/getWinRate.php";
         $meanDataArray = array('meanData1' => $meanData1, 'meanData2' => $meanData2);
-        $winRateData = $this->get($winRateURL, $meanDataArray);
+        $winRateData = $this->gateway($winRateURL, $meanDataArray);
         return $winRateData;
     }
     
-    function get($url, $data){
+    function gateway($url, $data){
         //connect to resource
         if(count($data)==0)
         {
