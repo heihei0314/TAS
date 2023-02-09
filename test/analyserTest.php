@@ -17,13 +17,16 @@
             $analyser = new Profile();
             $i=0;
             $profile = array();
+            $testA = array();
             $testScore = array();
             foreach($allAthletes as $athlete){
-                $profile = $analyser->calculator($athlete,$data[$i]);
+                $profile = $analyser->calculator($athlete,$gameData[$i]);
                 $i++;
+                array_push($testA,$athlete);
                 array_push($testScore,$profile['Score']);
             }   
-            $this->assertEquals(count($expectedScore), count($testScore));
+            $this->assertEquals($allAthletes, $testA);
+            $this->assertEquals($expectedScore, $testScore);
         }
     }
     
