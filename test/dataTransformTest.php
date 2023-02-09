@@ -2,7 +2,7 @@
     use PHPUnit\Framework\TestCase;
 
     class dataTransformTest extends \PHPUnit\Framework\TestCase{
-        public function testWinLoseRecord(){
+        public function testGameRecord(){
             //stub athletes name for test (null, one entry data, three entries data)
             $athletesTest = Array("","Lam Ching Ho","Kong Hin Sing");
             $dataset = array();
