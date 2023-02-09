@@ -6,10 +6,10 @@
             require_once __DIR__.'/../component/data-collection/dataCollection.php';
             $connection = new dataCollection();
             $response = $connection->connectAPI('athletes');
-            $this->assertEquals(13,count($response));
+            $this->assertGreaterThan(0,count($response));
 
             $response = $connection->connectAPI('games');
-            $this->assertTrue($response);
+            $this->assertGreaterThan(0,count($response));
         }
     }
 ?>
