@@ -43,10 +43,14 @@
         }
 
         public function testDataTransform($case){
+            $dataset = array();
             require_once __DIR__.'/../component/data-collection/dataTransform.php';
             $dataTransform = new dataTransform();
-            $gameData = $dataTransform->transformData($case);   
-            return $gameData;
+               $dataset = $dataTransform->transformData($case);   
+            
+            
+            $this->assertEquals(1, $dataset);
+            return $dataset;
         }
 
         public function testGetMean($case){
