@@ -12,7 +12,7 @@
             $this->assertEquals("Lam Ching Ho",$allAthletes[0]);
             print_r($allAthletes);echo "<br><br>";
 
-            //2. transform specific athlete game data
+            //2. transform game data with grabed athlete name
             require_once __DIR__.'/../component/data-collection/dataTransform.php';
             $dataTransform = new dataTransform();
             $gameData1 = $dataTransform->transformData($allAthletes[0]);   
@@ -23,7 +23,7 @@
             $this->assertEquals(3, count($gameData2));
             print_r(count($gameData2));echo "<br><br>";
 
-            //3. calculate mean for specific athlete with DB
+            //3. calculate mean with grabed athlete name from DB
             require_once __DIR__.'/../component/data-analyser/analyser.php';
             $analyser = new Profile();
             $mean1 = $analyser->calculateMean($allAthletes[0]);
