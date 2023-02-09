@@ -6,10 +6,10 @@
             require_once __DIR__.'/../component/data-collection/dataCollection.php';
             $connection = new dataCollection();
             $response = $connection->connectAPI('athletes');
-            $response->assertStatus(200);
+            $this->assertTrue($response);
 
             $response = $connection->connectAPI('games');
-            $response->assertStatus(200);
+            $this->assertTrue($response);
         }
     }
 ?>
