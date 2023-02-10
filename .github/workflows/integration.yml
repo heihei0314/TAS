@@ -2,9 +2,9 @@ name: GitHub Action CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "laravel" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "laravel" ]
 
 jobs:
     check-and-test:
