@@ -70,6 +70,16 @@
             Average Warning: <span id='Warning2'></span><br>
             Predicted Win Rate: <span id='WinRate2'></span><br>
         </p></div>
+        <div style='clear: both;'>
+            <p>Factors:<br>
+            Punch: {{$effect['punch']}}<br>
+            Body: {{$effect['body']}}<br>
+            Head: {{$effect['head']}}<br>
+            Spinning Kick on Body: {{$effect['spinBody']}}<br>
+            Spinning Kick on Head: {{$effect['spinHead']}}<br>
+            Warning: {{$effect['warning']}}<br>
+            </p>
+        </div>
     </body>
     <script>
     
@@ -119,5 +129,19 @@
         xmlhttp.send("athlete1=" + athlete1+"&athlete2=" + athlete2);
     }
 
+    function getWinCondition(){
+        var athlete1 = document.getElementById('name1').innerHTML;
+        var athlete2 = document.getElementById('name2').innerHTML;
+        const xmlhttp = new XMLHttpRequest();
+        xmlhttp.onload = function() {
+            const winRate = JSON.parse(this.responseText);
+            console.log(winRate);
+            document.getElementById('WinRate1').innerHTML = winRate[0];
+            document.getElementById('WinRate2').innerHTML = winRate[1];
+        }
+        xmlhttp.open("POST", "resource/getWinRate.php");
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("athlete1=" + athlete1+"&athlete2=" + athlete2);
+    }
     </script>
 </html>

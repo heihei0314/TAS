@@ -15,15 +15,16 @@ Class Controller{
         return $gameData;
     }
     
-    function postGameData(){
-        
-    }
-    
     function putGameData($gameData){
         $putGameDataURL = "http://tas.waitsuentkd.com/resource/putGameData.php";
         $this->gateway($putGameDataURL, $gameData);          
     }
-  
+
+    function getDBGameData(){
+        //db
+        return $gameData;
+    }     
+
     function putMean($profile){
         $putMeanURL = "http://tas.waitsuentkd.com/resource/putMean.php";
         $this->gateway($putMeanURL, $profile);        
