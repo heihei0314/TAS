@@ -1,2 +1,0 @@
-# TAS
-Taekwondo Analysis System
